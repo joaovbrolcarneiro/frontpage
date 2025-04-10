@@ -120,19 +120,24 @@ a:hover { opacity: 0.8; }
 .site-header {
     background-color: var(--light-color);
     border-bottom: 1px solid var(--border-color);
-    padding-top: 5px; /* Kept reduced padding */
-    padding-bottom: 5px; /* Kept reduced padding */
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 .header-container {
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    /* padding-left: 0; This was removed as negative margin is used below */
 }
 .site-logo {
     display: block;
-    height: 200px; /* <<<< ADJUSTED SIZE (Compromise) */
+    height: 50px; /* Kept reduced size */
     width: auto;
     max-width: 100%;
+}
+.logo-link {
+    display: inline-block; /* Ensure link wraps image correctly */
+    margin-left: -15px; /* <<<< PULL LOGO LEFT (Negative margin equal to .main-container padding) */
 }
 .logo-link:hover {
     opacity: 0.9;
@@ -307,7 +312,7 @@ footer {
     .steps-container { flex-direction: column; align-items: center; gap: 25px; }
     .step-card { width: 80%; max-width: 400px; flex: auto; }
     .benefits-container { grid-template-columns: repeat(2, 1fr); }
-    .site-logo { height: 160px; } /* <<<< ADJUSTED Resp Size (Approx 200px * 0.8) */
+    .site-logo { height: 45px; } /* <<<< ADJUSTED Resp Size */
     .footer-column { flex-basis: auto !important; flex-grow: 1 !important; text-align: center; min-width: auto; }
     .footer-column.contact p { display: inline-flex; align-items: center; }
 }
@@ -321,7 +326,7 @@ footer {
     .step-card { width: 90%; }
     .final-content { padding: 30px 25px; }
     .final-content ul { text-align: left; }
-    .site-logo { height: 120px; } /* <<<< ADJUSTED Resp Size (Approx 200px * 0.6) */
+    .site-logo { height: 40px; } /* <<<< ADJUSTED Resp Size */
 }
 
 @media (max-width: 576px) {
@@ -338,6 +343,6 @@ footer {
     .info-table-container th, .info-table-container td { padding: 5px 6px;}
     .benefits-container { grid-template-columns: 1fr; }
     .mission-vision-container { gap: 20px; }
-    .site-logo { height: 100px; } /* <<<< ADJUSTED Resp Size (Approx 200px * 0.5) */
+    .site-logo { height: 40px; } /* <<<< ADJUSTED Resp Size */
     .final-content ul { display: block; }
 }
